@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+    //ES5
+
+    /*
+    构造函数
+        /pattern/flags
+        new RegExp(pattern [, flags])
+        RegExp(pattern [, flags])
+     参数
+          pattern
+            正则表达式的文本。
+          flags
+            如果指定，标志可以具有以下值的任意组合：
+
+            g
+            全局匹配;找到所有匹配，而不是在第一个匹配后停止
+            i
+            忽略大小写
+            m
+            多行; 将开始和结束字符（^和$）视为在多行上工作（也就是，分别匹配每一行的开始和结束（由 \n 或 \r 分割），而不只是只匹配整个输入字符串的最开始和最末尾处。
+            u
+            Unicode; 将模式视为Unicode序列点的序列
+            y
+            粘性匹配; 仅匹配目标字符串中此正则表达式的lastIndex属性指示的索引(并且不尝试从任何后续的索引匹配)。
+
+      方法
+            RegExp.prototype.exec()
+                在目标字符串中执行一次正则匹配操作。
+
+            RegExp.prototype.test()
+                测试当前正则是否能匹配目标字符串。
+    */
+
+
+    //字符串的正则方法
+    /*
+    String.prototype.match
+    String.prototype.replace
+    String.prototype.search
+    String.prototype.split
+    */
+
+
+    // ES5 的 source 属性
+    // 返回正则表达式的正文
+    /abc/ig.source
+    // "abc"
+
+    // ES6 的 flags 属性
+    // 返回正则表达式的修饰符
+    /abc/ig.flags
+    // 'gi'
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+    //ES5
+    indexOf();
+
+    //ES6
+    includes()：返回布尔值，表示是否找到了参数字符串。
+    startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。
+    endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。
+
+
+    //repeat方法返回一个新字符串，表示将原字符串重复n次。
+    'x'.repeat(3) // "xxx"
+    'hello'.repeat(2) // "hellohello"
+    'na'.repeat(0) // ""
+
+    //padStart()，padEnd()
+    //padStart()用于头部补全，padEnd()用于尾部补全。
+    'x'.padStart(5, 'ab') // 'ababx'
+    'x'.padStart(4, 'ab') // 'abax'
+
+    'x'.padEnd(5, 'ab') // 'xabab'
+    'x'.padEnd(4, 'ab') // 'xaba'
+</script>
+</body>
+</html>
