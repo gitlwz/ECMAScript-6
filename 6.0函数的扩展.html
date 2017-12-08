@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+   //1. 函数参数的默认值 § ⇧
+   function log(x, y = 'World') {
+       console.log(x, y);
+   }
+    //2.与解构赋值默认值结合使用 § ⇧
+   function foo({x, y = 5}) {
+       console.log(x, y);
+   }
+
+   foo({}) // undefined 5
+   foo({x: 1}) // 1 5
+   foo({x: 1, y: 2}) // 1 2
+   foo() // TypeError: Cannot read property 'x' of undefined
+
+   function foo({x, y = 5} = {}) {
+       console.log(x, y);
+   }
+
+   foo() // undefined 5
+
+    //函数的 length 属性 § ⇧
+    //指定了默认值以后，函数的length属性，将返回没有指定默认值的参数个数。也就是说，指定了默认值后，length属性将失真。
+    //
+   (function (a) {}).length // 1
+   (function (a = 5) {}).length // 0
+   (function (a, b, c = 5) {}).length // 2
+
+
+</script>
+</body>
+</html>

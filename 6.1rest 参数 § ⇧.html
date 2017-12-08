@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+    //ES6 引入 rest 参数（形式为...变量名），用于获取函数的多余参数，这样就不需要使用arguments对象了。rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。
+    function add(...values) {
+        let sum = 0;
+
+        for (var val of values) {
+            sum += val;
+        }
+
+        return sum;
+    }
+
+    add(2, 5, 3) // 10
+
+    //下面是一个利用 rest 参数改写数组push方法的例子。
+    function push(array, ...items) {
+        items.forEach(function(item) {
+            array.push(item);
+            console.log(item);
+        });
+    }
+
+    var a = [];
+    push(a, 1, 2, 3)
+
+    //注意，rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。
+    /* 报错
+    function f(a, ...b, c) {
+        // ...
+    }*/
+
+    //4.name 属性 § ⇧
+    function foo() {}
+    foo.name // "foo"
+
+    //5.箭头函数 § ⇧
+    var f = () => 5;
+    // 等同于
+    var f = function () { return 5 };
+
+    var sum = (num1, num2) => num1 + num2;
+    // 等同于
+    var sum = function(num1, num2) {
+        return num1 + num2;
+    };
+
+
+    /*
+    使用注意点
+    箭头函数有几个使用注意点。
+
+    （1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+
+    （2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
+
+    （3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
+
+    （4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。
+
+    上面四点中，第一点尤其值得注意。this对象的指向是可变的，但是在箭头函数中，它是固定的。
+     */
+
+
+    //6.双冒号运算符 § ⇧
+
+    /*
+    箭头函数可以绑定this对象，大大减少了显式绑定this对象的写法（call、apply、bind）。但是，箭头函数并不适用于所有场合，所以现在有一个提案，提出了“函数绑定”（function bind）运算符，用来取代call、apply、bind调用。
+
+函数绑定运算符是并排的两个冒号（::），双冒号左边是一个对象，右边是一个函数。该运算符会自动将左边的对象，作为上下文环境（即this对象），绑定到右边的函数上面。
+     */
+    /*
+    foo::bar;
+    // 等同于
+    bar.bind(foo);
+
+    foo::bar(...arguments);
+    // 等同于
+    bar.apply(foo, arguments);
+     */
+
+
+    //7.尾调用优化 § ⇧
+    //什么是尾调用？
+    //尾调用（Tail Call）是函数式编程的一个重要概念，本身非常简单，一句话就能说清楚，就是指某个函数的最后一步是调用另一个函数。
+    //尾递归 § ⇧
+
+</script>
+</body>
+</html>

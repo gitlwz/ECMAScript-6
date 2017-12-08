@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+
+    //Number.isFinite(), Number.isNaN()
+    //Number.isFinite()用来检查一个数值是否为有限的（finite）。
+    Number.isFinite(15); // true
+    Number.isFinite(0.8); // true
+    Number.isFinite(NaN); // false
+    Number.isFinite(Infinity); // false
+    Number.isFinite(-Infinity); // false
+    Number.isFinite('foo'); // false
+    Number.isFinite('15'); // false
+    Number.isFinite(true); // false
+
+    //Number.isNaN()用来检查一个值是否为NaN。
+    Number.isNaN(NaN) // true
+    Number.isNaN(15) // false
+    Number.isNaN('15') // false
+    Number.isNaN(true) // false
+    Number.isNaN(9/NaN) // true
+    Number.isNaN('true'/0) // true
+    Number.isNaN('true'/'true') // true
+
+    //Number.isInteger()
+    //Number.isInteger()用来判断一个值是否为整数。需要注意的是，在 JavaScript 内部，整数和浮点数是同样的储存方法，所以 3 和 3.0 被视为同一个值。
+
+    //安全整数和 Number.isSafeInteger()
+    //avaScript 能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），超过这个范围，无法精确表示这个值。
+    //Number.isSafeInteger()则是用来判断一个整数是否落在这个范围之内。
+
+</script>
+</body>
+</html>
