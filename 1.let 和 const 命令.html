@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 下面的代码如果使用var，最后输出的是10。
+     */
+    var a = [];
+    for (var i = 0; i < 10; i++) {
+        a[i] = function () {
+            console.log(i);
+        };
+    }
+    a[6](); // 10
+
+
+    /**
+     * 如果使用let，声明的变量仅在块级作用域内有效，最后输出的是 6。
+     */
+    var a = [];
+    for (let i = 0; i < 10; i++) {
+        a[i] = function () {
+            console.log(i);
+        };
+    }
+    a[6](); // 6
+
+</script>
+</body>
+
+</html>

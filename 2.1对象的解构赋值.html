@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="content"></div>
+
+
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+    let content = document.querySelector("#content");
+    content.innerHTML = `
+    解构不仅可以用于数组，还可以用于对象。
+    <br/>
+    let { foo, bar } = { foo: "aaa", bar: "bbb" };
+    <br/>
+    foo // "aaa"
+    bar // "bbb"
+    `;
+
+
+
+</script>
+</body>
+</html>
