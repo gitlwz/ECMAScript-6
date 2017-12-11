@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+
+    /*
+    let promise = new Promise(function(resolve, reject) {
+        console.log('Promise');
+        resolve();
+    });
+
+    promise.then(function() {
+        console.log('resolved.');
+    });
+
+    console.log('Hi!');
+    */
+
+    /*-------------------*/
+    const p1 = new Promise(function (resolve, reject) {
+        console.log('p1')
+        reject('chenggong');
+    })
+
+    const p2 = new Promise(function (resolve, reject) {
+        console.log('p2')
+        resolve(p1);
+    })
+
+    p2
+        .then(result => console.log(result + "------resolve"))
+        .catch(error => console.log(error  + "------reject"))
+    console.log('Hi!');
+/*
+
+1.Promise 的含义 § ⇧
+
+2.基本用法 § ⇧
+
+3.Promise.prototype.then() § ⇧
+
+Promise 实例具有then方法，也就是说，then方法是定义在原型对象Promise.prototype上的。它的作用是为 Promise 实例添加状态改变时的回调函数。
+前面说过，then方法的第一个参数是resolved状态的回调函数，第二个参数（可选）是rejected状态的回调函数。
+
+
+4.Promise.prototype.catch() § ⇧
+Promise.prototype.catch方法是.then(null, rejection)的别名，用于指定发生错误时的回调函数。
+
+5.Promise.all() § ⇧
+    Promise.all方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。
+
+6.Promise.race() § ⇧
+    Promise.race方法同样是将多个 Promise 实例，包装成一个新的 Promise 实例。
+
+    const p = Promise.race([p1, p2, p3]);
+    上面代码中，只要p1、p2、p3之中有一个实例率先改变状态，p的状态就跟着改变。那个率先改变的 Promise 实例的返回值，就传递给p的回调函数。
+
+7.Promise.resolve() § ⇧
+    有时需要将现有对象转为 Promise 对象，Promise.resolve方法就起到这个作用。
+
+8.Promise.reject() § ⇧
+    Promise.reject(reason)方法也会返回一个新的 Promise 实例，该实例的状态为rejected。
+ */
+</script>
+</body>
+</html>
