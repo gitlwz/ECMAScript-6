@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+
+/*
+1.传统方法 § ⇧
+    ES6 诞生以前，异步编程的方法，大概有下面四种。
+
+        回调函数
+        事件监听
+        发布/订阅
+        Promise 对象
+    Generator 函数将 JavaScript 异步编程带入了一个全新的阶段。
+
+
+3.Generator 函数 § ⇧
+    function* asyncJob() {
+      // ...其他代码
+      var f = yield readFile(fileA);
+      // ...其他代码
+    }
+
+    上面代码的函数asyncJob是一个协程，它的奥妙就在其中的yield命令。它表示执行到此处，
+    执行权将交给其他协程。也就是说，yield命令是异步两个阶段的分界线。
+
+    协程遇到yield命令就暂停，等到执行权返回，再从暂停的地方继续往后执行。它的最大优点，
+    就是代码的写法非常像同步操作，如果去除yield命令，简直一模一样。
+ */
+</script>
+</body>
+</html>

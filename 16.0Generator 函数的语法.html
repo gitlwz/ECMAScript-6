@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+
+    /*
+    1.基本概念 § ⇧
+        function* helloWorldGenerator() {
+          yield 'hello';
+          yield 'world';
+          return 'ending';
+        }
+
+        var hw = helloWorldGenerator();
+
+        hw.next()
+        // { value: 'hello', done: false }
+
+        hw.next()
+        // { value: 'world', done: false }
+
+        hw.next()
+        // { value: 'ending', done: true }
+
+        hw.next()
+        // { value: undefined, done: true }
+
+
+    2.next 方法的参数 § ⇧
+        yield表达式本身没有返回值，或者说总是返回undefined。next方法可以带一个参数，该参数就会被当作上一个yield表达式的返回值。
+
+        function* f() {
+          for(var i = 0; true; i++) {
+            var reset = yield i;
+            if(reset) { i = -1; }
+          }
+        }
+
+        var g = f();
+
+        g.next() // { value: 0, done: false }
+        g.next() // { value: 1, done: false }
+        g.next(true) // { value: 0, done: false }
+
+    7.yield* 表达式 § ⇧
+
+    8.作为对象属性的 Generator 函数 § ⇧
+
+    10.含义 § ⇧
+        Generator 与状态机 § ⇧
+
+    11.应用 § ⇧
+        （1）异步操作的同步化表达 § ⇧
+        （2）控制流管理 § ⇧
+        （2）控制流管理 § ⇧
+        （4）作为数据结构 § ⇧
+
+     */
+</script>
+</body>
+</html>
