@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        pre{
+            background-color: #333333;
+            font-size: 15px;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+<pre>
+    1.简介 § ⇧
+        Class 可以通过extends关键字实现继承，这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。
+
+        子类必须在constructor方法中调用super方法，否则新建实例时会报错。这是因为子类没有自己的this对象，
+        而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象。
+
+    3.super 关键字 § ⇧
+        注意，super虽然代表了父类A的构造函数，但是返回的是子类B的实例，即super内部的this指的是B，
+        因此super()在这里相当于A.prototype.constructor.call(this)。
+</pre>
+
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+
+
+</script>
+</body>
+</html>

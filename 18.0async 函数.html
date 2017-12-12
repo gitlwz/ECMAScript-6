@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+    function timeout(ms) {
+        return new Promise((resolve) => {
+            setTimeout(resolve, ms);
+        });
+    }
+
+    async function asyncPrint(value, ms) {
+        await timeout(ms);
+        console.log(value);
+    }
+
+    asyncPrint('hello world', 500);
+
+/*
+1.含义 § ⇧
+    ES2017 标准引入了 async 函数，使得异步操作变得更加方便。
+
+    async 函数是什么？一句话，它就是 Generator 函数的语法糖。
+
+
+    一比较就会发现，async函数就是将 Generator 函数的星号（*）替换成async，将yield替换成await，仅此而已。
+
+        async函数对 Generator 函数的改进，体现在以下四点。
+
+（1）内置执行器。
+
+    Generator 函数的执行必须靠执行器，所以才有了co模块，而async函数自带执行器。
+    也就是说，async函数的执行，与普通函数一模一样，只要一行。
+
+ */
+</script>
+</body>
+</html>

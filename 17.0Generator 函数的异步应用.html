@@ -32,6 +32,26 @@
 
     协程遇到yield命令就暂停，等到执行权返回，再从暂停的地方继续往后执行。它的最大优点，
     就是代码的写法非常像同步操作，如果去除yield命令，简直一模一样。
+
+4.Thunk 函数 § ⇧
+       Thunk 函数的含义 § ⇧
+        编译器的“传名调用”实现，往往是将参数放到一个临时函数之中，再将这个临时函数传入函数体。这个临时函数就叫做 Thunk 函数。
+
+        function f(m) {
+          return m * 2;
+        }
+
+        f(x + 5);
+
+        // 等同于
+
+        var thunk = function () {
+          return x + 5;
+        };
+
+        function f(thunk) {
+          return thunk() * 2;
+        }
  */
 </script>
 </body>
